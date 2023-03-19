@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+body, html {
+  height: 100%;
+  line-height: 1.8;
+}
+
+/* Full height image header */
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("/w3images/mac.jpg");
+  min-height: 100%;
+}
+
+.w3-bar .w3-button {
+  padding: 16px;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a href="#home" class="w3-bar-item w3-button w3-wide"><img src="photo-2023-03-15-16-10-43-1.png" width="px"></a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small"><br>
+      <a href="#about" class="w3-bar-item w3-button w3-large">ABOUT</a>
+      <a href="#Who" class="w3-bar-item w3-button w3-large">WHO WE ARE</a>
+      <a href="#contact" class="w3-bar-item w3-button w3-large"><i class="fa fa-envelope"></i> CONTACT</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+  <a href="#Who" onclick="w3_close()" class="w3-bar-item w3-button">WHO WE ARE</a>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+</nav>
+
+<!-- Header with full-height image -->
+<header class="bgimg-1 w3-display-container w3-grayscale-min" style="background-image: url(bg1.png);" id="home">
+  <div class="w3-display-left w3-text-white" style="padding:48px">
+    <span class="w3-jumbo w3-hide-small">Start something that matters</span><br>
+    <span class="w3-xxlarge w3-hide-large w3-hide-medium">Start something that matters</span><br>
+    <span class="w3-large">Stop wasting valuable time with projects that just isn't you.</span>
+    <p><a href="#contact" class="w3-button w3-amber w3-padding-large w3-large w3-margin-topw3-hover-opacity-off">APPLY WITH US</a></p>
+  </div> 
+  <div class="w3-display-bottomright w3-text-orange w3-large" style="padding:24px 48px;">
+    <a href="https://www.facebook.com/profile.php?id=100090769165558&mibextid=LQQJ4d" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+    <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Finstagram.com%2Ffolks.power.solutions%3Figshid%3DYmMyMTA2M2Y%253D%26fbclid%3DIwAR2WC2CFd9ISTkX35HpHI9jfG_C3WqTBA0anKUEJvFV3WiZ6riGNFlRO-qI&h=AT1H4phzvYVGtUT1Fm16lQmK7H_ariXQDk73A5HccyNnYFIXBaTeWSyorXk9c_T-tRva2Oj13WuqBdmzO5LULUJS22Xe7Yhw_Oizi63DueZ_cPdEcsG6EKhjfXTBH2V_M_x4NA" target=""><i class="fa fa-instagram w3-hover-opacity"></i></a>
+
+  </div>
+</header>
+
+
+
+<!-- Promo Section - "We know design" -->
+<div class="w3-container w3-light-grey" style="padding:128px 16px"id="Who">
+    <div class="w3-row-padding">
+      <div class="w3-col m6">
+        <h3><b class ="w3-text-orange">We Have Passion.</b></h3>
+        <p class="w3-large">Helping You Achieving Your Objectives A business solution is a combination of ideas used to help a company achieve its objectives. Some relevant solutions include technology evaluation, strategic planning and the synthesis of complex business information. Businesses develop strategies that are action-oriented to expand the international and domestic markets</p>
+      </div>
+      <div class="w3-col m6">
+        <img class="w3-image w3-round-large" src="div7.png" alt="Buildings" width="1280" height="640">
+      </div>
+    </div>
+  </div>
+  <div class ="w3-border"></div>
+<!-- Promo Section - "We know design" -->
+<div class="w3-container w3-light-grey" style="padding:128px 16px">
+    <div class="w3-row-padding">
+     <div class="w3-col m6">
+        <img class="w3-image w3-round-large w3-large" src="div10.png" alt="Buildings">
+        
+      </div> 
+      <div class="w3-col m6 ">
+        <h3 id="skills"><b class="w3-text-orange">Our Skills.</b></h3>
+      <img src="div.png" style="float: left;"><h4><b>&nbsp;&nbsp;&nbsp;Cold Calling</h4></b></p>
+        <p class="w3-center" style="font-size: large;">Provide a solicit business from potential customers who have not previously expressed interest in the seller's product or solution</p>
+        <img src="div (1).png" style="float: left;"><h4><b>&nbsp;&nbsp;&nbsp;&nbspReal estate</b></h4>
+        <p class="w3-center" style="font-size: large;">Providing people with a place to live, to using raw land to farm, to renting a commercial property for a business</p>
+        <img src = "div (2).png" style="float: left;"><h4><b>&nbsp;&nbsp;&nbsp;Development</b></h4>
+        <p class="w3-center" style="font-size: large;">A home renovation provides you with a great opportunity to make your house energy-efficient and save on electricity bills</p>
+        <img src = "div (3).png" style="float: left;"><h4><b>&nbsp;&nbsp;&nbsp;And More...</b></h4>
+        <ul style="font-size: large; list-style-type:none;"><l1>- Closing Deal</l1><li>- Generating leads</li><li>- Business solutions</li><li>- Making calling list</li><li>- Professionally trained agents</li></ul>
+    </div>
+      </div>
+
+      
+    </div>
+  </div>
+</style>
+<!-- About Section -->
+<div class="w3-container" style="padding:128px 16px" id="about">
+    <h3 class="w3-center w3-text-orange">ABOUT THE COMPANY</h3>
+    <div class="w3-row-padding w3-center" style="margin-top:64px">
+      <div class="w3-quarter">
+        <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
+        <p class="w3-large">Responsive</p>
+        <p id="Text55">Fast in providing the help our client needs</p>
+      </div>
+      <div class="w3-quarter">
+        <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
+        <p class="w3-large">Passion</p>
+        <p id="Text55">To achieve all your goals and your objectives</p>
+      </div>
+      <div class="w3-quarter">
+        <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
+        <p class="w3-large">Design</p>
+        <p id ="Text55">We think with creativity in order to help our client</p>
+      </div>
+      <div class="w3-quarter">
+        <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
+        <p class="w3-large">Support</p>
+        <p id="Text55">We provide all kinds of support in order to acheieve your objectives in the business field</p>
+      </div>
+    </div>
+  </div>
+<!-- Contact Section -->
+<div class="w3-container w3-light-grey" style="padding:128px 16px" id="contact">
+  <h3 class="w3-center">CONTACT</h3>
+  <p class="w3-center w3-large">Lets get in touch. Send us a message:</p>
+  <div style="margin-top:48px">
+    <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: mail@mail.com</p>
+    <br>
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
+      <p>
+        <button class="w3-button w3-black" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </p>
+    </form>
+
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64">
+    <p class="w3-center w3-large">Have a question?:</p>
+    <p><input class="w3-input w3-border" type="text" placeholder="Email us Here" required name="Name"></p>
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-xlarge w3-section">
+    <p>Folks Power Solutions</p>
+    <a href="https://www.facebook.com/profile.php?id=100090769165558&mibextid=LQQJ4d" target="_blank"></a><i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Finstagram.com%2Ffolks.power.solutions%3Figshid%3DYmMyMTA2M2Y%253D%26fbclid%3DIwAR2WC2CFd9ISTkX35HpHI9jfG_C3WqTBA0anKUEJvFV3WiZ6riGNFlRO-qI&h=AT1H4phzvYVGtUT1Fm16lQmK7H_ariXQDk73A5HccyNnYFIXBaTeWSyorXk9c_T-tRva2Oj13WuqBdmzO5LULUJS22Xe7Yhw_Oizi63DueZ_cPdEcsG6EKhjfXTBH2V_M_x4NA" target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i>
+  </div>
+</footer>
+ 
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+</script>
+
+</body>
+</html>
