@@ -16,43 +16,117 @@ body, html {
   line-height: 1.8;
 }
 
+    body {
+        animation: fadeInAnimation ease 3s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
 /* Full height image header */
 .bgimg-1 {
   background-position: center;
+  opacity:0.9;
   background-size: cover;
   background-image: url("/w3images/mac.jpg");
   min-height: 100%;
 }
 
+    .underline-hover{
+        display: inline-block;
+        position:relative;
+    }
+        .underline-hover::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #FFC107;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        .underline-hover:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+    .zoom:hover {
+        transition: transform .3s ease;
+        transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    }
+    #zoomzoom:hover {
+        transition: transform .3s ease;
+        transform: scale(1.1);
+    }
+     
+    #zoom1::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 3px;
+        bottom: 0;
+        left: 0;
+        background-color: #FFC107;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+    }
+
+    #borderan {
+        border: 3px solid #0000;
+        border-radius: 12px;
+        background: linear-gradient(#efcd88, #ffab00, #cb8800) padding-box, linear-gradient( var(--angle), #efcd88, #ffab00, #cb8800 ) border-box;
+        animation: 8s rotate linear infinite;
+    }
+
+    @keyframes rotate {
+        to {
+            --angle: 360deg;
+        }
+    }
+
+    @property --angle {
+        syntax: "<angle>";
+        initial-value: 0deg;
+        inherits: false;
+    }
+
+    #zoom1:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
 .w3-bar .w3-button {
   padding: 16px;
 }
 </style>
-  <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/64386ba64247f20fefeb81f9/1gtu690ri';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+
 </head>
 <body>
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-card" id="myNavbar">
-    <a href="#home" class="w3-bar-item w3-button w3-wide"><img src="photo-2023-03-15-16-10-43-1.png" width="px"></a>
+    <a href="#home" class="w3-bar-item w3-button w3-wide w3-hover-white" id="zoom1"><div class="zoom"><img src="photo-2023-03-15-16-10-43-1.png"></div></a>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small"><br>
-      <a href="#about" class="w3-bar-item w3-button w3-large">ABOUT</a>
-      <a href="#Who" class="w3-bar-item w3-button w3-large">WHO WE ARE</a>
-      <a href="#contact" class="w3-bar-item w3-button w3-large"><i class="fa fa-envelope"></i> CONTACT</a>
+     
+      <a href="#about" class="w3-bar-item w3-button w3-large w3-hover-amber" id="zoom1">ABOUT</a>
+
+      <a href="#Who" class="w3-bar-item w3-button w3-large w3-hover-amber" id="zoom1">WHO WE ARE</a>
+
+      <a href="#contact" class="w3-bar-item w3-button w3-large w3-hover-amber"id="zoom1"><i class="fa fa-envelope"></i> CONTACT</a>
+          
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
@@ -65,18 +139,18 @@ s0.parentNode.insertBefore(s1,s0);
 <!-- Sidebar on small screens when clicking the menu icon -->
 <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button" >ABOUT</a>
   <a href="#Who" onclick="w3_close()" class="w3-bar-item w3-button">WHO WE ARE</a>
   <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
 </nav>
 
 <!-- Header with full-height image -->
 <header class="bgimg-1 w3-display-container w3-grayscale-min" style="background-image: url(bg1.png);" id="home">
-  <div class="w3-display-left w3-text-white" style="padding:48px">
-    <span class="w3-jumbo w3-hide-small">Start something that matters</span><br>
-    <span class="w3-xxlarge w3-hide-large w3-hide-medium">Start something that matters</span><br>
-    <span class="w3-large">Stop wasting valuable time with projects that just isn't you.</span>
-    <p><a href="#contact" class="w3-button w3-amber w3-padding-large w3-large w3-margin-topw3-hover-opacity-off">APPLY WITH US</a></p>
+  <div class="w3-display-left w3-text-white" style="padding:48px;">
+    <span class="w3-jumbo w3-hide-small" style="position: relative; top: -230px; left:470px;"><p class="underline-hover"><b>Start something that matters</p></b></span><br>
+    <span class="w3-xxlarge w3-hide-large w3-hide-medium w3-container">Start something that matters</span><br>
+    <span class="w3-large" style="position:relative; left:650px; top:-310px;">Stop wasting valuable time with projects that just isn't you.</span>
+    <p><a href="#contact" id="zoomzoom" style="position:relative; left:760px; width:250px; top:-300px;" class="w3-button w3-amber w3-padding-large w3-large w3-margin-topw3-hover-opacity-off w3-hover-amber">APPLY WITH US</a></p>
   </div> 
   <div class="w3-display-bottomright w3-text-orange w3-large" style="padding:24px 48px;">
     <a href="https://www.facebook.com/profile.php?id=100090769165558&mibextid=LQQJ4d" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
@@ -92,11 +166,11 @@ s0.parentNode.insertBefore(s1,s0);
 <div class="w3-container w3-light-grey" style="padding:128px 16px"id="Who">
     <div class="w3-row-padding">
       <div class="w3-col m6">
-        <h3><b class ="w3-text-orange">We Have Passion.</b></h3>
-        <p class="w3-large">Helping You Achieving Your Objectives A business solution is a combination of ideas used to help a company achieve its objectives. Some relevant solutions include technology evaluation, strategic planning and the synthesis of complex business information. Businesses develop strategies that are action-oriented to expand the international and domestic markets</p>
+   <h3 style="position:relative; font-size:52px; left:260px;" class="underline-hover"><b class ="w3-text-orange">We Have Passion.</b></h3><br /><br /><br /><br /><br /><br />
+        <h4 style="text-align:justify;" class="w3-large">Helping You Achieving Your Objectives A business solution is a combination of ideas used to help a company achieve its objectives. Some relevant solutions include technology evaluation, strategic planning and the synthesis of complex business information. Businesses develop strategies that are action-oriented to expand the international and domestic markets</h4>
       </div>
       <div class="w3-col m6">
-        <img class="w3-image w3-round-large" src="div7.png" alt="Buildings" width="1280" height="640">
+        <img class="w3-image w3-round-large" id="borderan" src="div7.jpg" alt="Buildings" width="1280" height="640">
       </div>
     </div>
   </div>
@@ -104,20 +178,37 @@ s0.parentNode.insertBefore(s1,s0);
 <!-- Promo Section - "We know design" -->
 <div class="w3-container w3-light-grey" style="padding:128px 16px">
     <div class="w3-row-padding">
-     <div class="w3-col m6">
-        <img class="w3-image w3-round-large w3-large" src="div10.png" alt="Buildings">
+     <div class="w3-col m6"><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <img class="w3-image w3-round-large w3-large" id="borderan" src="div10.png" alt="Buildings">
         
       </div> 
+        <style>
+            .justify {
+                text-align:justify;
+               
+            }
+        </style>
       <div class="w3-col m6 ">
-        <h3 id="skills"><b class="w3-text-orange">Our Skills.</b></h3>
-      <img src="div.png" style="float: left;"><h4><b>&nbsp;&nbsp;&nbsp;Cold Calling</h4></b></p>
-        <p class="w3-center" style="font-size: large;">Cold calling prospects to see if there is interest in selling their home. It means just having a conversation and getting you the best selling price, gathering inlet and building rapport, and then passing off the lead to your company.</p>
-        <img src="div (1).png" style="float: left;"><h4><b>&nbsp;&nbsp;&nbsp;&nbspReal estate</b></h4>
-        <p class="w3-center" style="font-size: large;">Providing people with a place to live, to using raw land to farm, to renting a commercial property for a business</p>
-        <img src = "div (2).png" style="float: left;"><h4><b>&nbsp;&nbsp;&nbsp;Roofing Contractor</b></h4>
-        <p class="w3-center" style="font-size: large;">Specializes in the installation, repair, and maintenance of roofs on residential or commercial buildings</p>
-        <img src = "div (3).png" style="float: left;"><h4><b>&nbsp;&nbsp;&nbsp;And More...</b></h4>
-        <ul style="font-size: large; list-style-type:none;"><l1>- Closing Deal</l1><li>- Generating leads</li><li>- Solar</li><li>- Making calling list</li><li>- Professionally trained agents</li></ul>
+        <h3 id="skills" style="position:relative; left:-100px;  font-size:52px;" class="underline-hover"><b class="w3-text-orange">Our Skills.</b></h3><br /><br /><br /><br /><br />
+      <img src="div.png" style="position:relative; left:360px;"><h4 style="position:relative; top:-53px; left:410px"><b>&nbsp;&nbsp;&nbsp;Telemarketing&nbsp;&nbsp;<img src="telemarketing.png" height="50" width="50" style="position:relative; top:-5px;" /></h4></b></p>
+                                                                <p class="w3-center justify" style="font-size: large;">
+                                                                    Our cold calling service fulfills your needs when it comes to getting guaranteed two to three qualified leads a day from every agent , automatic three to four hundred dials a day , highly trained and fluent Agents working for 45 hours a week to help you grow your business.
+                                                                </p><br />
+        <img src="div (1).png" style="position: relative; top:10px; left: 360px;;"><h4 style="position:relative; top:-43px; left:410px"><b>&nbsp;&nbsp;&nbsp;Quality insurance team&nbsp;&nbsp;<img src="service.png" height="50" width="50" style="position:relative; top:-5px;" /></b></h4>
+                                                                         <p class="w3-center justify" style="font-size: large;">
+                                                                             A department responsible for supervising agents and checking their work ,  creating and running tests , identifying errors and send feedbacks and weekly reports to clients , making sure of the efficiency of each and every agent and that their work meets our standards , evaluate agents progress and calls and rechecking qualified leads before sending it to the client.
+                                                                         </p><br />
+        <img src = "div (2).png" style="position: relative; top:5px; left: 360px;"><h4 style="position:relative; top:-50px; left:410px"><b>&nbsp;&nbsp;&nbsp;Technical support team&nbsp;<img src="technical-support.png" height="50" width="50" style="position:relative; top:-5px;" /></b></h4>
+                                                                          <p class="w3-center justify" style="font-size: large;">
+                                                                              IT specialists who make sure that all remote parties are functioning properly .
+                                                                              Handling all software, internet,Pcs , connection channels, hardware checkups , checking that every agent's PC is qualified for handling work pressure and server maintenance.
+                                                                              IT Department works full time when every agent logs into the system.
+                                                                          </p><br />
+        <img src = "div (3).png" style="position: relative; top:5px; left: 340px;"><h4 style="position:relative; top:-50px; left:390px"><b>&nbsp;&nbsp;&nbsp;Business development department&nbsp;<img src="infrastructure.png" height="50" width="50" style="position:relative; top:-5px;"</b></h4>
+                                                                          <p class="w3-center justify" style="font-size: large;">
+                                                                              Working with the client and making sure that the company fulfill his needs and establish a stable connection between both parties .
+                                                                              Providing clients with tools such as CRM, data analyzes and lead reports to enhance  overall efficiency
+                                                                          </p>
     </div>
       </div>
 
@@ -151,40 +242,20 @@ s0.parentNode.insertBefore(s1,s0);
       </div>
     </div>
   </div>
-<!-- Contact Section -->
-<div class="w3-container w3-light-grey" style="padding:128px 16px" id="contact">
-  <h3 class="w3-center">CONTACT</h3>
-  <p class="w3-center w3-large">Lets get in touch. Send us a message:</p>
-  <div style="margin-top:48px">
-    <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: mail@mail.com</p>
-    <br>
-    <form action="/action_page.php" target="_blank">
-      <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
-      <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
-      <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
-      <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
-      <p>
-        <button class="w3-button w3-black" type="submit">
-          <i class="fa fa-paper-plane"></i> SEND MESSAGE
-        </button>
-      </p>
-    </form>
 
-  </div>
-</div>
 
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64">
-    <p class="w3-center w3-large">Have a question?:</p>
-    <p><input class="w3-input w3-border" type="text" placeholder="Email us Here" required name="Name"></p>
-  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-  <div class="w3-xlarge w3-section">
-    <p>Folks Power Solutions</p>
-    <a href="https://www.facebook.com/profile.php?id=100090769165558&mibextid=LQQJ4d" target="_blank"></a><i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwa.me%2Fmessage%2FSVNFTBWBGZOTG1%3Ffbclid%3DIwAR2QAC-fQe3UfIY9zq9a19ME5lX6V9fuSkIhWhPWV8c55SLgzGcdOehADHQ&h=AT3X6Z9ZQCT5rKOmjFsBPy10vu6J31QYaQ0Le499323_6bKTHXnzcQMTKtDEsMplK_JP5fjwKueNNIUluxTwySsHqET6WBpHWkeWolzGvCmSVrp6tLD-9cBs5rZa7KCTrRIg5Q" target="_blank
-    "><i class="fa fa-whatsapp w3-hover-opacity" aria-hidden="true"></i></a> 
-    <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Finstagram.com%2Ffolks.power.solutions%3Figshid%3DYmMyMTA2M2Y%253D%26fbclid%3DIwAR2WC2CFd9ISTkX35HpHI9jfG_C3WqTBA0anKUEJvFV3WiZ6riGNFlRO-qI&h=AT1H4phzvYVGtUT1Fm16lQmK7H_ariXQDk73A5HccyNnYFIXBaTeWSyorXk9c_T-tRva2Oj13WuqBdmzO5LULUJS22Xe7Yhw_Oizi63DueZ_cPdEcsG6EKhjfXTBH2V_M_x4NA" target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i>
-  </div>
+    <h2 style="font-size:larger;" class="w3-center w3-large">Contact:</h2> <br /> <br />
+    <a href="https://forms.gle/TQPDQXo7VrtXi76Q6" target="_blank" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>Clients</a>
+    <a href="#https://forms.gle/jiCEuzPA4PXA2BvBA" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>Careers</a>
+    <div class="w3-xlarge w3-section">
+        <p>Folks Power Solutions</p>
+        <a href="https://www.facebook.com/profile.php?id=100090769165558&mibextid=LQQJ4d" target="_blank"></a><i class="fa fa-facebook-official w3-hover-opacity"></i>
+        <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwa.me%2Fmessage%2FSVNFTBWBGZOTG1%3Ffbclid%3DIwAR2QAC-fQe3UfIY9zq9a19ME5lX6V9fuSkIhWhPWV8c55SLgzGcdOehADHQ&h=AT3X6Z9ZQCT5rKOmjFsBPy10vu6J31QYaQ0Le499323_6bKTHXnzcQMTKtDEsMplK_JP5fjwKueNNIUluxTwySsHqET6WBpHWkeWolzGvCmSVrp6tLD-9cBs5rZa7KCTrRIg5Q" target="_blank
+    "><i class="fa fa-whatsapp w3-hover-opacity" aria-hidden="true"></i></a>
+        <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Finstagram.com%2Ffolks.power.solutions%3Figshid%3DYmMyMTA2M2Y%253D%26fbclid%3DIwAR2WC2CFd9ISTkX35HpHI9jfG_C3WqTBA0anKUEJvFV3WiZ6riGNFlRO-qI&h=AT1H4phzvYVGtUT1Fm16lQmK7H_ariXQDk73A5HccyNnYFIXBaTeWSyorXk9c_T-tRva2Oj13WuqBdmzO5LULUJS22Xe7Yhw_Oizi63DueZ_cPdEcsG6EKhjfXTBH2V_M_x4NA" target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i>
+    </div>
 </footer>
  
 <script>
