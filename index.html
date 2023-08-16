@@ -9,106 +9,214 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="icon" href="photo-2023-03-15-16-10-43-1.png" type="image/icon type">
 <style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
-
-body, html {
-  height: 100%;
-  line-height: 1.8;
-}
-
-    body {
-        animation: fadeInAnimation ease 3s;
-        animation-iteration-count: 1;
-        animation-fill-mode: forwards;
+   
+    .intro {
+        display:none;
+    }
+    .title {
+        position: relative;
+        top: -230px;
+        left: 470px;
     }
 
-    @keyframes fadeInAnimation {
-        0% {
-            opacity: 0;
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Raleway", sans-serif
         }
 
-        100% {
-            opacity: 1;
+    body, html {
+        height: 100%;
+        overflow-x: hidden;
+        line-height: 1.8;
+    }
+
+        body {
+            animation: fadeInAnimation ease 3s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
         }
-    }
 
-/* Full height image header */
-.bgimg-1 {
-  background-position: center;
-  opacity:0.9;
-  background-size: cover;
-  background-image: url("/w3images/mac.jpg");
-  min-height: 100%;
-}
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
 
-    .underline-hover{
-        display: inline-block;
-        position:relative;
-    }
-        .underline-hover::after {
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Full height image header */
+        .bgimg-1 {
+            background-position: center;
+            opacity: 0.9;
+            background-size: cover;
+            background-image: url("/w3images/mac.jpg");
+            min-height: 100%;
+        }
+
+        .underline-hover {
+            display: inline-block;
+            position: relative;
+        }
+
+            .underline-hover::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                transform: scaleX(0);
+                height: 2px;
+                bottom: 0;
+                left: 0;
+                background-color: #FFC107;
+                transform-origin: bottom right;
+                transition: transform 0.25s ease-out;
+            }
+
+            .underline-hover:hover::after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
+            }
+
+        .zoom:hover {
+            transition: transform .3s ease;
+            transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+        }
+
+        #zoomzoom:hover {
+            transition: transform .3s ease;
+            transform: scale(1.1);
+        }
+
+        #zoom1::after {
             content: '';
             position: absolute;
             width: 100%;
             transform: scaleX(0);
-            height: 2px;
+            height: 3px;
             bottom: 0;
             left: 0;
             background-color: #FFC107;
             transform-origin: bottom right;
             transition: transform 0.25s ease-out;
         }
-        .underline-hover:hover::after {
+
+        #borderan {
+            border: 3px solid #0000;
+            border-radius: 12px;
+            background: linear-gradient(#efcd88, #ffab00, #cb8800) padding-box, linear-gradient( var(--angle), #efcd88, #ffab00, #cb8800 ) border-box;
+            animation: 8s rotate linear infinite;
+        }
+
+        @keyframes rotate {
+            to {
+                --angle: 360deg;
+            }
+        }
+
+        @property --angle {
+            syntax: "<angle>";
+            initial-value: 0deg;
+            inherits: false;
+        }
+
+        #zoom1:hover::after {
             transform: scaleX(1);
             transform-origin: bottom left;
         }
-    .zoom:hover {
-        transition: transform .3s ease;
-        transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-    }
-    #zoomzoom:hover {
-        transition: transform .3s ease;
-        transform: scale(1.1);
-    }
-     
-    #zoom1::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        transform: scaleX(0);
-        height: 3px;
-        bottom: 0;
-        left: 0;
-        background-color: #FFC107;
-        transform-origin: bottom right;
-        transition: transform 0.25s ease-out;
-    }
 
-    #borderan {
-        border: 3px solid #0000;
-        border-radius: 12px;
-        background: linear-gradient(#efcd88, #ffab00, #cb8800) padding-box, linear-gradient( var(--angle), #efcd88, #ffab00, #cb8800 ) border-box;
-        animation: 8s rotate linear infinite;
-    }
-
-    @keyframes rotate {
-        to {
-            --angle: 360deg;
+        .w3-bar .w3-button {
+            padding: 16px;
         }
+        .mobile {
+            display:none;
+        }
+        .mobiletitle {
+            display:none;
+        }
+        .mobilebutton {
+            display:none;
+        }
+    @media screen and (max-width:480px) {
+    #promo {
+        position:relative;
     }
+    #nametitle {
+        position: relative;
+        left:-180px;
+    }
+    #ourskills {
+        position:relative;
+        left:180px;
+    }
+    .titles {
+        position:relative;
+        left:-310px;
 
-    @property --angle {
-        syntax: "<angle>";
-        initial-value: 0deg;
-        inherits: false;
     }
-
-    #zoom1:hover::after {
-        transform: scaleX(1);
-        transform-origin: bottom left;
+    .photosicon {
+        display:none;
+       
     }
-.w3-bar .w3-button {
-  padding: 16px;
-}
+    #title1 {
+        position:relative;
+        left:-340px;
+        top:30px;
+    }
+    #title2 {
+        position:relative;
+        left:-340px;
+        top:30px;
+    }
+    #title3 {
+        position:relative;
+        left:-360px;
+        font-size:large;
+        top:30px;
+    }
+    .title5 {
+        display:flex;
+        float:left;
+        position:relative;
+        left:40px;
+    }
+        
+    #para1 {
+        position:relative;
+        top:-20px;
+        left:0px;
+    }
+    #section {
+        position:relative;
+        left:0px;
+    }
+    #foot {
+        position:relative;
+        left:0px;
+    }
+    .ti {
+        text-align:left;
+       position:relative;
+       left:-50px;
+    }
+    .mobile {
+        display:block;
+        position:relative;
+        top:-390px;
+    }
+    .mobiletitle {
+        display:block;
+        position:relative;
+        top:-400px;
+        font-size:medium;
+    }
+    .mobilebutton {
+        display:block;
+        position:relative;
+        top:-460px;
+        
+    }
+    }
+    
 </style>
 
 </head>
@@ -145,12 +253,14 @@ body, html {
 </nav>
 
 <!-- Header with full-height image -->
-<header class="bgimg-1 w3-display-container w3-grayscale-min" style="background-image: url(bg1.png);" id="home">
-  <div class="w3-display-left w3-text-white" style="padding:48px;">
-    <span class="w3-jumbo w3-hide-small" style="position: relative; top: -230px; left:470px;"><p class="underline-hover"><b>Start something that matters</p></b></span><br>
-    <span class="w3-xxlarge w3-hide-large w3-hide-medium w3-container">Start something that matters</span><br>
+<header class="bgimg-1 w3-display-container w3-grayscale-min header" style="background-image: url(bg1.png);" id="home">
+  <div class="w3-display-left w3-text-white" id="title" style="padding:48px;">
+    <span class="w3-jumbo title" ><p id="text" class="underline-hover"><b class="title5">Start something that matters</b></p></span><br><br />
+      <h1 class="mobile underline-hover"><b>Start something that matters</b></h1>
+      <h3 class="mobiletitle"><i>Stop wasting valuable time with projects that just isn't you.</i></h3>
     <span class="w3-large" style="position:relative; left:650px; top:-310px;">Stop wasting valuable time with projects that just isn't you.</span>
-    <p><a href="#contact" id="zoomzoom" style="position:relative; left:760px; width:250px; top:-300px;" class="w3-button w3-amber w3-padding-large w3-large w3-margin-topw3-hover-opacity-off w3-hover-amber">APPLY WITH US</a></p>
+    <p id="button"><a href="#contact" id="zoomzoom" style="position:relative; left:760px; width:250px; top:-300px;" class="w3-button w3-amber w3-padding-large w3-large w3-margin-topw3-hover-opacity-off w3-hover-amber">APPLY WITH US</a></p>
+    <a href="#contact" class="w3-button w3-amber w3-padding-large w3-large w3-margin-topw3-hover-opacity-off w3-hover-amber mobilebutton">APPLY WITH US</a>
   </div> 
   <div class="w3-display-bottomright w3-text-orange w3-large" style="padding:24px 48px;">
     <a href="https://www.facebook.com/profile.php?id=100090769165558&mibextid=LQQJ4d" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
@@ -164,8 +274,8 @@ body, html {
 <!-- Promo Section - "We know design" -->
 <div class="w3-container w3-light-grey" style="padding:128px 16px"id="Who">
     <div class="w3-row-padding">
-      <div class="w3-col m6">
-   <h3 style="position:relative; font-size:52px; left:260px;" class="underline-hover"><b class ="w3-text-orange">We Have Passion.</b></h3><br /><br /><br /><br /><br /><br />
+      <div id="promo" class="w3-col m6">
+   <h3 style="position:relative; font-size:52px; left:260px;" class="underline-hover"><b id="nametitle" class ="w3-text-orange">We Have Passion.</b></h3><br /><br /><br /><br /><br /><br />
         <h4 style="text-align:justify;" class="w3-large">Helping You Achieving Your Objectives A business solution is a combination of ideas used to help a company achieve its objectives. Some relevant solutions include technology evaluation, strategic planning and the synthesis of complex business information. Businesses develop strategies that are action-oriented to expand the international and domestic markets</h4>
       </div>
       <div class="w3-col m6">
@@ -188,23 +298,23 @@ body, html {
             }
         </style>
       <div class="w3-col m6 ">
-        <h3 id="skills" style="position:relative; left:-100px;  font-size:52px;" class="underline-hover"><b class="w3-text-orange">Our Skills.</b></h3><br /><br /><br /><br /><br />
-      <img src="div.png" style="position:relative; left:360px;"><h4 style="position:relative; top:-53px; left:410px"><b>&nbsp;&nbsp;&nbsp;Telemarketing&nbsp;&nbsp;<img src="telemarketing.png" height="50" width="50" style="position:relative; top:-5px;" /></h4></b></p>
+        <h3 id="skills" style="position:relative; left:-100px;  font-size:52px;" class="underline-hover"><b id="ourskills" class="w3-text-orange">Our Skills.</b></h3><br /><br /><br /><br /><br />
+      <img src="div.png" class="photosicon" style="position:relative; left:360px;"><h4 style="position:relative; top:-53px; left:410px"><b class="titles">&nbsp;&nbsp;&nbsp;Telemarketing&nbsp;&nbsp;<img src="telemarketing.png" height="50" width="50" style="position:relative; top:-5px;" /></h4></b></p>
                                                                 <p class="w3-center justify" style="font-size: large;">
                                                                     Our cold calling service fulfills your needs when it comes to getting guaranteed two to three qualified leads a day from every agent , automatic three to four hundred dials a day , highly trained and fluent Agents working for 45 hours a week to help you grow your business.
                                                                 </p><br />
-        <img src="div (1).png" style="position: relative; top:10px; left: 360px;;"><h4 style="position:relative; top:-43px; left:410px"><b>&nbsp;&nbsp;&nbsp;Quality insurance team&nbsp;&nbsp;<img src="service.png" height="50" width="50" style="position:relative; top:-5px;" /></b></h4>
+        <img src="div (1).png" class="photosicon" style="position: relative; top:10px; left: 360px;;"><h4 style="position:relative; top:-43px; left:410px"><b id="title1" class="titles">&nbsp;&nbsp;&nbsp;Quality insurance team&nbsp;&nbsp;<img src="service.png" height="50" width="50" style="position:relative; top:-5px;" /></b></h4>
                                                                          <p class="w3-center justify" style="font-size: large;">
                                                                              A department responsible for supervising agents and checking their work ,  creating and running tests , identifying errors and send feedbacks and weekly reports to clients , making sure of the efficiency of each and every agent and that their work meets our standards , evaluate agents progress and calls and rechecking qualified leads before sending it to the client.
                                                                          </p><br />
-        <img src = "div (2).png" style="position: relative; top:5px; left: 360px;"><h4 style="position:relative; top:-50px; left:410px"><b>&nbsp;&nbsp;&nbsp;Technical support team&nbsp;<img src="technical-support.png" height="50" width="50" style="position:relative; top:-5px;" /></b></h4>
+        <img src = "div (2).png" class="photosicon" style="position: relative; top:5px; left: 360px;"><h4 style="position:relative; top:-50px; left:410px"><b id="title2" class="titles">&nbsp;&nbsp;&nbsp;Technical support team&nbsp;<img src="technical-support.png" height="50" width="50" style="position:relative; top:-5px;" /></b></h4>
                                                                           <p class="w3-center justify" style="font-size: large;">
                                                                               IT specialists who make sure that all remote parties are functioning properly .
                                                                               Handling all software, internet,Pcs , connection channels, hardware checkups , checking that every agent's PC is qualified for handling work pressure and server maintenance.
                                                                               IT Department works full time when every agent logs into the system.
                                                                           </p><br />
-        <img src = "div (3).png" style="position: relative; top:5px; left: 340px;"><h4 style="position:relative; top:-50px; left:390px"><b>&nbsp;&nbsp;&nbsp;Business development department&nbsp;<img src="infrastructure.png" height="50" width="50" style="position:relative; top:-5px;"</b></h4>
-                                                                          <p class="w3-center justify" style="font-size: large;">
+        <img src = "div (3).png" class="photosicon" style="position: relative; top:5px; left: 340px;"><h4 style="position:relative; top:-50px; left:390px"><b id="title3" class="titles">&nbsp;&nbsp;&nbsp;Business development department&nbsp;<img src="infrastructure.png" height="50" width="50" class="iconfortitle3" style="position:relative; top:-5px;"></b></h4>
+                                                                          <p id="para1" class="w3-center justify" style="font-size: large;">
                                                                               Working with the client and making sure that the company fulfill his needs and establish a stable connection between both parties .
                                                                               Providing clients with tools such as CRM, data analyzes and lead reports to enhance  overall efficiency
                                                                           </p>
@@ -216,7 +326,7 @@ body, html {
   </div>
 </style>
 <!-- About Section -->
-<div class="w3-container" style="padding:128px 16px" id="about">
+<div id="section" class="w3-container" style="padding:128px 16px" id="about">
     <h3 class="w3-center w3-text-orange">ABOUT THE COMPANY</h3>
     <div class="w3-row-padding w3-center" style="margin-top:64px">
       <div class="w3-quarter">
@@ -244,7 +354,7 @@ body, html {
 
 
 <!-- Footer -->
-<footer class="w3-center w3-black w3-padding-64">
+<footer id="foot" class="w3-center w3-black w3-padding-64">
     <h2 style="font-size:larger;" class="w3-center w3-large">Contact:</h2> <br /> <br />
     <a href="https://forms.gle/TQPDQXo7VrtXi76Q6" target="_blank" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>Clients</a>
     <a href="https://forms.gle/jiCEuzPA4PXA2BvBA" target="_blank" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>Careers</a>
